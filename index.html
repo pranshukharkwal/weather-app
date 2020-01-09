@@ -3,6 +3,7 @@
 <head>
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
     <h1> <em> Welcome to the weather app </em> </h1>
@@ -12,10 +13,14 @@
             <p>
                 <label>City</label>
                 <input type="text"
-                       id = "myText"
+                       id = "cityname"
                        value = "Write city name" />
             </p>
-            <button type="button"> Submit !</button>
+            <button type="button" onclick = "showCity()"> Submit !</button>
+        </fieldset>
+        <fieldset>
+            <legend> Results </legend>
+            <div id="root"></div>
         </fieldset>
     </form></div>
     <footer> <em> Footer : © All rights Reserved. 2019  </em></footer>
