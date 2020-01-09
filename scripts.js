@@ -7,7 +7,7 @@ function getcity()
 }
 function getweather(city)
 {   
-    var apiurl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2671bd95216beeb2b40e0cca97ec23ba`;
+    var apiurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2671bd95216beeb2b40e0cca97ec23ba`;
     fetch(apiurl)
     .then(function(response) {
         var data = response.json();
