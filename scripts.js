@@ -1,65 +1,40 @@
-function showCity()
+const weather = {}
+
+function getcity()
 {
     var city = document.getElementById("cityname").value;
-    var text = "api.openweathermap.org/data/2.5/weather?q=";
-    var apiurl = text.concat(city);
-
-
-    const app = document.getElementById('root')
-    app.innerHTML = "";
-    
-    const container = document.createElement('div')
-    container.setAttribute('class', 'container')
-    app.appendChild(container)
-
-    const card = document.createElement('div')
-    card.setAttribute('class', 'card')
-    container.appendChild(card)
-    
-    const h1 = document.createElement('h1')
-    h1.textContent = city
-    card.appendChild(h1)
-
+    getweather(city);
 }
-/*
-
-
-const logo = document.createElement('img')
-logo.src = 'logo.png'
-
-const container = document.createElement('div')
-container.setAttribute('class', 'container')
-
-app.appendChild(logo)
-app.appendChild(container)
-
-var request = new XMLHttpRequest()
-request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
-request.onload = function() {
-  // Begin accessing JSON data here
-  var data = JSON.parse(this.response)
-  if (request.status >= 200 && request.status < 400) {
-    data.forEach(movie => {
-      const card = document.createElement('div')
-      card.setAttribute('class', 'card')
-
-      const h1 = document.createElement('h1')
-      h1.textContent = movie.title
-
-      const p = document.createElement('p')
-      movie.description = movie.description.substring(0, 300)
-      p.textContent = `${movie.description}...`
-
-      container.appendChild(card)
-      card.appendChild(h1)
-      card.appendChild(p)
+function getweather(city)
+{   
+    var apiurl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2671bd95216beeb2b40e0cca97ec23ba`;
+    fetch(apiurl)
+    .then(function(response) {
+        var data = response.json();
+        return data;
     })
-  } else {
-    const errorMessage = document.createElement('marquee')
-    errorMessage.textContent = `Gah, it's not working!`
-    app.appendChild(errorMessage)
-  }
+    .then(function(data){
+        weather.temp = data.main.temp;
+        weather.desc = data.weather[0].description;
+        weather.lati = data.coord.lat;
+        weather.longi = data.coord.lon;
+        weather.main = data.weather[0].main;
+        weather.pressure = data.main.pressure;
+        weather.humidity = data.main.humidity;
+    })
+    .then(function(){
+        displayWeather();
+    });
+
 }
 
-request.send() 
-*/
+function displayWeather()
+{
+    document.getElementById("lati").innerHTML = weather.lati
+    document.getElementById("longi").innerHTML = weather.longi
+    document.getElementById("main").innerHTML = weather.main
+    document.getElementById("desc").innerHTML = weather.desc
+    document.getElementById("temp").innerHTML = weather.temp
+    document.getElementById("pressure").innerHTML = weather.pressure
+    document.getElementById("humidity").innerHTML = weather.humidity
+}

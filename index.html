@@ -11,18 +11,68 @@
         <fieldset>
             <legend> Weather Data </legend>
             <p>
-                <label>City</label>
+                <label>Enter City</label>
                 <input type="text"
                        id = "cityname"
-                       value = "Write city name" />
+                       value = "City name here" />
+<!--
+                <label>Enter country code</label>
+                <input type="text"
+                       id = "ccode"
+                       value = "Country code here" />
+-->
             </p>
-            <button type="button" onclick = "showCity()"> Submit !</button>
+            <button type="button" onclick = "getcity()"> Submit !</button>
         </fieldset>
         <fieldset>
             <legend> Results </legend>
-            <div id="root"></div>
+            <div id="Result Container"></div>
+            <table>
+                <tr>
+                  <th>Details</th>
+                  <th>Values</th>
+                </tr>
+                <tr>
+                  <td>Latitude </td>
+                  <td id = "lati"></td>
+                </tr>
+                <tr>
+                  <td>Longitude</td>
+                  <td id = "longi"></td>
+                </tr>
+                <tr>
+                    <td>Weather</td>
+                    <td id = "main"></td>
+                  </tr>
+                  <tr>
+                    <td>Description</td>
+                    <td id = "desc"></td>
+                  </tr>
+                  <tr>
+                    <td>Temperature</td>
+                    <td id = "temp"></td>
+                  </tr>
+                  <tr>
+                    <td>Pressure</td>
+                    <td id = "pressure"></td>
+                  </tr>
+                  <tr>
+                    <td>Humidity</td>
+                    <td id = "humidity"></td>
+                  </tr>
+              </table>
+            <!--
+                Latitude : <p id = "lati"> </p> <br>
+                Longitude : <p id = "longi"> </p> <br>
+                <p id = "main"> </p> <br>
+                <p id = "desc"> </p> <br>
+                <p id = "temperature"> </p> <br>
+                <p id = "pressure"> </p> <br>
+                <p id = "humidity"> </p> <br>
+                        -->
         </fieldset>
     </form></div>
     <footer> <em> Footer : © All rights Reserved. 2019  </em></footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
