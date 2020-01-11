@@ -6,28 +6,32 @@
     <script src="scripts.js"></script>
 </head>
 <body>
-    <h1> <em> Welcome to the weather app </em> </h1>
-    <div><form>
+  <header>
+    <div class="overlay">
+      <h1 class="heading"> <em> Weather app </em> </h1>
+      <h3> Welcome to the weather app </h3>
+      <p> Find weather data of any city(in the world) with just a click of the button. Enter the city name <br> and the press the submit button to view the results.  </p>
+    </div> 
+  </header>
+
+  <div class="content">
+  <br> <br>
+      <form>
         <fieldset>
-            <legend> Weather Data </legend>
-            <p>
-                <label>Enter City</label>
-                <input type="text"
-                       id = "cityname"
-                       value = "City name here" />
-<!--
-                <label>Enter country code</label>
-                <input type="text"
-                       id = "ccode"
-                       value = "Country code here" />
--->
-            </p>
-            <button type="button" onclick = "getcity()"> Submit !</button>
+          <legend> Weather Data </legend> <br>
+              <label>Enter City</label> 
+              <input type="text"
+                      id = "cityname"
+                      value = "City name here" /> <br> <br>
+            <button type="button" onclick = "getcity()"> Submit !</button> 
         </fieldset>
+      </form>
+
         <fieldset>
-            <legend> Results </legend>
+          <legend> Results </legend>
+            <br>
             <div id="Result Container"></div>
-            <table>
+            <table id = "result">
                 <tr>
                   <th>Details</th>
                   <th>Values</th>
@@ -61,18 +65,10 @@
                     <td id = "humidity"></td>
                   </tr>
               </table>
-            <!--
-                Latitude : <p id = "lati"> </p> <br>
-                Longitude : <p id = "longi"> </p> <br>
-                <p id = "main"> </p> <br>
-                <p id = "desc"> </p> <br>
-                <p id = "temperature"> </p> <br>
-                <p id = "pressure"> </p> <br>
-                <p id = "humidity"> </p> <br>
-                        -->
+              <br>
         </fieldset>
-    </form></div>
-    <footer> <em> Footer : © All rights Reserved. 2019  </em></footer>
-    <script src="scripts.js"></script>
+        <br>
+      </div>
+  <footer> <em> Footer : © All rights Reserved. 2019  </em></footer>
 </body>
 </html>

@@ -38,3 +38,5 @@ function displayWeather()
     document.getElementById("pressure").innerHTML = weather.pressure
     document.getElementById("humidity").innerHTML = weather.humidity
 }
+
+
