@@ -108,3 +108,7 @@ div.content
    width: 600px; 
    margin : 0 auto;
 }
+
+html{
+  font-size: 150%
+}

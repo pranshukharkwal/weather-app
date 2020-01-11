@@ -3,6 +3,7 @@ const weather = {}
 function getcity()
 {
     var city = document.getElementById("cityname").value;
+    document.getElementById('after-click').style.display = "block";
     getweather(city);
 }
 function getweather(city)
